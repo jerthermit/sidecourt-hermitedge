@@ -1,0 +1,12 @@
+# Legacy reference only. New Railway services must use dashboard settings.
+# See ../docs/deployment.md; legacy Config as Code support ends 1 December 2026.
+[build]
+builder = "RAILPACK"
+buildCommand = "npm ci --no-audit --no-fund && npm run build"
+
+[deploy]
+startCommand = "npm start"
+healthcheckPath = "/health"
+healthcheckTimeout = 30
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5
